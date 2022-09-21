@@ -1,0 +1,15 @@
+Catatan custom:
+
+Model
+M_data
+
+View 
+Penggajian
+
+Controller
+Auth
+
+Database
+tahun
+
+Nb: Custom ditandai dengan // ucup dan diahiri dengan // end ucup
