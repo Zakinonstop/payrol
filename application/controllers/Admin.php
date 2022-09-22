@@ -85,7 +85,7 @@ class Admin extends CI_Controller
     {
         $data['web']    = $this->web;
         $data['data']    = $this->M_data->pegawai()->result();
-        $data['title']    = 'Data Pegawai';
+        $data['title']    = 'Data Karyawan';
         $data['body']    = 'admin/pegawai';
         $this->load->view('template', $data);
     }
