@@ -12,51 +12,51 @@
 
                     <div class="card-body table-responsive">
                         <!-- ucup tambah filter  -->
-                    <form action="<?= base_url('admin/laporan')?>" method="post">
-                        <div class="row">
-                            <div class="col-sm-1">
-                            <div class="form-group">
-                                <label>Tahun</label>
-                                <select name="tahun" class="form-control">
-                                <option value="">Semua</option>
-                                <?php 
-                                foreach ($thn as $key => $value) {
-                                    echo '<option value='. $value->nama_tahun .'>'. $value->nama_tahun .'</option>';
-                                }
-                                ?>
-                                </select>
-                            </div>
-                            </div>
-                            
-                            <div class="col-sm-1">
-                            <div class="form-group">
-                                <label>Bulan</label>
-                                <select name="bulan" class="form-control">
-                                <option value="">Semua</option>
-                                <option value="01">Januari</option>
-                                <option value="02">Februari</option>
-                                <option value="03">Maret</option>
-                                <option value="04">April</option>
-                                <option value="05">Mei</option>
-                                <option value="06">Juni</option>
-                                <option value="07">Juli</option>
-                                <option value="08">Agustus</option>
-                                <option value="09">September</option>
-                                <option value="10">Oktober</option>
-                                <option value="11">November</option>
-                                <option value="12">Desember</option>
-                                </select>
-                            </div>
-                            </div>
+                        <form action="<?= base_url('admin/laporan') ?>" method="post">
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <div class="form-group">
+                                        <label>Tahun</label>
+                                        <select name="tahun" class="form-control">
+                                            <option value="">Semua</option>
+                                            <?php
+                                            foreach ($thn as $key => $value) {
+                                                echo '<option value=' . $value->nama_tahun . '>' . $value->nama_tahun . '</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
 
-                            <div class="col-sm-1" style="padding-top: 32px">
-                            <button type="submit" class="btn btn-info">Filter</button>
-                            <!-- <a href="<?= base_url('Admin/printLaporan')?>" type="submit" class="btn btn-info">Print</a> -->
+                                <div class="col-sm-1">
+                                    <div class="form-group">
+                                        <label>Bulan</label>
+                                        <select name="bulan" class="form-control">
+                                            <option value="">Semua</option>
+                                            <option value="01">Januari</option>
+                                            <option value="02">Februari</option>
+                                            <option value="03">Maret</option>
+                                            <option value="04">April</option>
+                                            <option value="05">Mei</option>
+                                            <option value="06">Juni</option>
+                                            <option value="07">Juli</option>
+                                            <option value="08">Agustus</option>
+                                            <option value="09">September</option>
+                                            <option value="10">Oktober</option>
+                                            <option value="11">November</option>
+                                            <option value="12">Desember</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-1" style="padding-top: 32px">
+                                    <button type="submit" class="btn btn-info">Filter</button>
+                                    <!-- <a href="<?= base_url('Admin/printLaporan') ?>" type="submit" class="btn btn-info">Print</a> -->
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
                         <!-- end ucup  -->
-                    
+
                         <table border="1" id="myTable" class="table table-bordered table-striped text-center">
                             <thead>
                                 <tr>
@@ -73,9 +73,6 @@
                             <tbody>
                                 <?php
 
-                                $tahun  = $tahun;
-                                $bulan  = $bulan;
-
                                 $no = 1;
                                 foreach ($list as $data) {
                                     // $tahun  = date('Y');
@@ -90,7 +87,7 @@
                                     $gaji   = ($absen * $data->gaji) + ($cuti * $data->gaji) + ($sakit * $data->gaji);
                                     //var_dump($cuti);
                                     //hitung hari cuti
-                                ?>
+                                    ?>
                                     <tr>
                                         <td width="1%"><?= $no++ ?></td>
                                         <td><?= ucfirst($data->nip) ?></td>

@@ -358,10 +358,16 @@ class Admin extends CI_Controller
 
         $tahun = $this->input->post('tahun');
         $bulan = $this->input->post('bulan');
-        $thn = $this->M_data->getTahun();
+        if ($tahun != '') {
+            $tahun = $this->input->post('tahun');
+            $bulan = $this->input->post('bulan');
+        } else {
+            $tahun = date('Y');
+            $bulan = date('m');
+        }
         $list = $this->M_data->pegawai()->result();
+        $thn = $this->M_data->getTahun();
 
-        $data['list']    = $this->M_data->pegawai()->result();
         $data['web']    = $this->web;
         $data['title']    = 'Laporan';
         $data['body']    = 'admin/laporan';
